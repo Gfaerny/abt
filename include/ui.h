@@ -9,7 +9,7 @@
 
 
 #define PRINT_SPACE std::printf("");
-#define PRINT_ABT std::printf("ABT");
+#define PRINT_ABT std::printf(".ABT");
 
 #define ANSI_COLOR_RED_CODE     "\x1b[31m"
 #define ANSI_COLOR_GREEN_CODE   "\x1b[32m"

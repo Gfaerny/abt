@@ -1,9 +1,9 @@
 #include "../include/ui.h"
+#include "../include/read_file.h"
 #include <cstdio>
 #include <filesystem>
 #include <fstream>
-#include <streambuf>
-#include <system_error>
+
 
 struct winsize winsize_obj;
 
@@ -18,6 +18,7 @@ uint8_t get_terminal_row()
   ioctl(STDOUT_FILENO, TIOCGWINSZ, &winsize_obj);
   return winsize_obj.ws_row;
 }
+
 
 void main_ui_print(uint8_t terminal_column_size, uint8_t terminal_row_size) 
 {
@@ -34,22 +35,30 @@ void main_ui_print(uint8_t terminal_column_size, uint8_t terminal_row_size)
   }
 
   /*first column */
-  for (uint8_t i = 0; i < (terminal_column_size / 2); ++i) 
+  for (uint8_t i = 0; i < ((terminal_column_size / 2) - 2); ++i) 
   {
     PRINT_SPACE
   }
 
   PRINT_ABT
   
-  for (uint8_t i = 0; i < (terminal_column_size / 2); ++i) 
+  for (uint8_t i = 0; i < ((terminal_column_size / 2) - 2); ++i) 
   {
     PRINT_SPACE
   }
 
-  
-  
-  
-  
+/// there we have to open abt file 
 
+  if(abtfile_exists)
+  {
+    if(abtfile_section_des_exist)
+    {
+//  print the ui for it
+    }
+    if(abtfile_section_lastg_exist)
+    {
+//  print the ui for it
+    }
+  }
   
 }
