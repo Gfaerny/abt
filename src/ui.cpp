@@ -1,5 +1,4 @@
 #include "../include/ui.h"
-#include "../include/read_file.h"
 #include <cstdio>
 #include <filesystem>
 #include <fstream>
@@ -29,7 +28,7 @@ void main_ui_print(uint8_t terminal_column_size, uint8_t terminal_row_size)
     ofstream_obj.open(".abt");
     if(!ofstream_obj.is_open())
     {
-      std::printf("abt massage [error] : abt find .abt file in this directory but it can't be opened. \n");
+      error_handling_abt_read();
       return ;
     }
   }
@@ -47,13 +46,18 @@ void main_ui_print(uint8_t terminal_column_size, uint8_t terminal_row_size)
     PRINT_SPACE
   }
 
+  
+
 /// there we have to open abt file 
 
   if(abtfile_exists)
   {
     if(abtfile_section_des_exist)
     {
-//  print the ui for it
+         
+
+  
+      
     }
     if(abtfile_section_lastg_exist)
     {
